@@ -27,7 +27,7 @@ namespace                         | Y         |               | Destination name
 
 ## Example usage
 ```
-- name: Google Artifact Registry Build & Push
+- name: Google Kubernetes engine deployment
   uses: piotrkrusinski/action-google-kubernetes-engine-deployment@[version tag]
   with:
     google_project_id: [gke_project_id]
