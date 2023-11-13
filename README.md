@@ -28,7 +28,7 @@ namespace                         | Y         |               | Destination name
 ## Example usage
 ```
 - name: Google Kubernetes engine deployment
-  uses: piotrkrusinski/action-google-kubernetes-engine-deployment@[version tag]
+  uses: piotr-krusinski/action-google-kubernetes-engine-deployment@[version tag]
   with:
     google_project_id: [gke_project_id]
     google_kubernetes_cluster_name: [gke_region]
