@@ -1,0 +1,52 @@
+name: 'Google Kubernetes Engine deployment'
+description: 'Deploy image to Google Kubernetes Engine cluster.'
+author: 'Piotr Krusiński <piotr.krusinski@gmail.com>'
+branding:
+  icon: 'box'
+  color: 'blue'
+inputs:
+  google_project_id:
+    description: 'Google project ID of your project where GKE is created'
+    required: true
+  google_kubernetes_cluster_name:
+    description: 'Google Kubernetes Cluster name'
+    required: true
+  google_kubernetes_cluster_zone:
+    description: 'Google Kubernetes Cluster zone'
+    required: true
+  service_account_key:
+    description: 'Base64 version of Google Cloud Platform service key to access GKE'
+    required: true
+  application_name:
+    description: 'Application name to update'
+    required: true
+  container_name:
+    description: 'Container name to update'
+    required: true
+  image_repo_url:
+    description: 'URL docker image repository where image is stored'
+    required: true
+  image_name:
+    description: 'Name of deployed image'
+    required: true
+  image_tag:
+    description: 'Tag of deployed image'
+    required: true
+  namespace:
+    description: 'Destination namespace where image should be updated'
+    required: true
+  type:
+    description: 'Type of updated resource (deployment/statefulset/daemonset) - deployment is default'
+    required: false
+  annotations:
+    description: 'List of annotations separated by semicolon (example: *update_date: 20231029_181921, description_tag: Updated by GitHub Actions*)'
+    required: false
+  labels:
+    description: 'List of labels separated by semicolon (example: *label1: value1, label2: value2*)'
+    required: false
+  init_containers:
+    description: 'Additional init containers which should be updated with the same image name'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
